@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background: black;
+  overflow: hidden;
+}
+
+.glowing {
+  position: relative;
+  min-width: 700px;
+  height: 550px;
+  margin: -150px;
+  transform-origin: right;
+  animation: colorChange 5s linear infinite;
+}
+
+.glowing:nth-child(even) {
+  transform-origin: left;
+}
+
+@keyframes colorChange {
+  0% {
+    filter: hue-rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.glowing span {
+  position: absolute;
+  top: calc(80px * var(--i));
+  left: calc(80px * var(--i));
+  bottom: calc(80px * var(--i));
+  right: calc(80px * var(--i));
+}
+
+.glowing span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  width: 15px;
+  height: 15px;
+  background: #f00;
+  border-radius: 50%;
+}
+
+.glowing span:nth-child(3n + 1)::before {
+  background: rgba(134,255,0,1);
+  box-shadow: 0 0 20px rgba(134,255,0,1),
+    0 0 40px rgba(134,255,0,1),
+    0 0 60px rgba(134,255,0,1),
+    0 0 80px rgba(134,255,0,1),
+    0 0 0 8px rgba(134,255,0,.1);
+}
+
+.glowing span:nth-child(3n + 2)::before {
+  background: rgba(255,214,0,1);
+  box-shadow: 0 0 20px rgba(255,214,0,1),
+    0 0 40px rgba(255,214,0,1),
+    0 0 60px rgba(255,214,0,1),
+    0 0 80px rgba(255,214,0,1),
+    0 0 0 8px rgba(255,214,0,.1);
+}
+
+.glowing span:nth-child(3n + 3)::before {
+  background: rgba(0,226,255,1);
+  box-shadow: 0 0 20px rgba(0,226,255,1),
+    0 0 40px rgba(0,226,255,1),
+    0 0 60px rgba(0,226,255,1),
+    0 0 80px rgba(0,226,255,1),
+    0 0 0 8px rgba(0,226,255,.1);
+}
+
+.glowing span:nth-child(3n + 1) {
+  animation: animate 10s alternate infinite;
+}
+
+.glowing span:nth-child(3n + 2) {
+  animation: animate-reverse 3s alternate infinite;
+}
+
+.glowing span:nth-child(3n + 3) {
+  animation: animate 8s alternate infinite; 
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-reverse {
+  0% {
+    transform: rotate(360deg);
+  }
+  
+  50% {
+    transform: rotate(180deg);
+  }
+  
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.text-content {
+    position: absolute;
+    /* z-index: 10; */
+    /* height: 20vh; Ensures the initial section takes up the full viewport height */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 10%;
+  }
+  
+  h1 {
+    font-size: 500%;
+    color: white;
+    /* text-shadow: 0 0 18px white; */
+    font-family: 'Kanit', sans-serif;
+    /* padding-top: 20px; */
+    height: 1000%;
+  }
+
+  .content {
+    position: absolute;
+    z-index: 10;
+    padding: 25px;
+    padding-top: 20px;
+    line-height: 50px;
+    width: 70%;
+    max-width: 350px;
+    /* margin: 0 auto; */
+    font-family: "SUSE", sans-serif;
+    font-size: 25px;
+    color: white;
+    background-color: rgba(43, 43, 43, 0.602);
+    border-radius: 40px;
+    margin-right: 100px;
+    margin-left: -55%;
+    margin-top: 80px;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  .con {
+    position: absolute;
+    z-index: 10;
+    padding: 30px;
+    padding-top: 20px;
+    padding-bottom: 75px;
+    line-height: 50px;
+    width: 70%;
+    max-width: 350px;
+    /* margin: 0 auto; */
+    font-family: "SUSE", sans-serif;
+    font-size: 25px;
+    color: white;
+    background-color: rgba(43, 43, 43, 0.602);
+    border-radius: 40px;
+    margin-right: 50px;
+    margin-left: 100px;
+    margin-top: 80px;
+  }
+
+  .links {
+    position: absolute;
+    z-index: 10;
+    padding: 30px;
+    padding-top: 20px;
+    /* padding-bottom: 300px; */
+    line-height: 50px;
+    width: 70%;
+    max-width: 300px;
+    /* margin: 0 auto; */
+    font-family: "SUSE", sans-serif;
+    font-size: 25px;
+    color: white;
+    background-color: rgba(43, 43, 43, 0.602);
+    border-radius: 40px;
+    margin-right: 50px;
+    margin-left: 950px;
+    margin-top: 80px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  img {
+    width: 80%;
+    margin-top: 40px;
+    margin-left: 30px;
+  }
+
+  
+  
